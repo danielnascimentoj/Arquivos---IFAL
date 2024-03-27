@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Help</title>
+    <h1>Help</h1>
+  </head>
+  <body>
+    <form>
+      <p>Digite um número:<input type="text" id="inNumero"></p>
+      <input type="submit" value="Obter resultado">
+    </form>
+
+    <h2></h2>
+
+    <script>
+      const frm = document.querySelector("form")
+      const resp = document.querySelector("h2")
+
+      frm.addEventListener("submit", (e) =>{
+        e.preventDefault()
+
+        const num = Number(frm.inNumero.value)
+        const dobro = num * 2
+        const met = num/2
+
+        if(num > 10){
+          resp.textContent = dobro
+        }
+        else{
+          resp.textContent = met
+        }
+      })
+    </script>
+  </body>
+</html>

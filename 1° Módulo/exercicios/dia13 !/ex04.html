@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Escola DNL</title>
+  <h1>Programa Escolar</h1>
+</head>
+
+<body>
+  <script>
+    let idade = Number(prompt("Digite sua idade:"))
+    let turma
+
+    if (idade >= 4 && idade <= 5) {
+      turma = "A"
+    }
+    else if (idade >= 6 && idade <= 8) {
+      turma = "B"
+    }
+    else if (idade >= 9 && idade <= 10) {
+      turma = "C"
+    }
+    else {
+      document.write("A escola nao tem sala para crianças menores de 4 anos ou maior que 10 anos.")
+    }
+    document.write("Turma:" + turma)
+  </script>
+</body>
+
+</html>

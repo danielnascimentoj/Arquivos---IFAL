@@ -1,0 +1,22 @@
+<script>
+  let num = Number(prompt("Digite um número maior que 2: "));
+
+  function fibonacciAteN(num) {
+    // Verifica se N é maior que 2
+    if (num <= 2) {
+      document.write("N deve ser maior que 2.");
+      return;
+    }
+
+    const sequencia = [1, 1];
+    for (let i = 2; i < num; i++) {
+      const proximoTermo = sequencia[i - 1] + sequencia[i - 2];
+      sequencia.push(proximoTermo);
+    }
+
+    document.write("Sequência de Fibonacci até o termo " + num + ": " + sequencia.join(", "));
+  }
+
+  // Chama a função com o número inserido pelo usuário
+  fibonacciAteN(num);
+</script>

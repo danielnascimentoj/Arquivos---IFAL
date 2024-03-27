@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Delta</title>
+    <h1>Delta da Equação de 2° Grau</h1>
+  </head>
+  <body>
+    <form>
+      <p>Valor de a:<input type="text" id="inA"></p>
+      <p>Valor de b:<input type="text" id="inB"></p>
+      <p>Valor de c:<input type="text" id="inC"></p>
+      <input type="submit" value="Calcular delta">
+    </form>
+
+    <h3></h3>
+
+    <script>
+      const frm = document.querySelector("form")
+      const resp = document.querySelector("h3")
+
+        frm.addEventListener("submit", (e) =>{
+          e.preventDefault()
+          const a = (frm.inA.value)
+          const b = (frm.inB.value)
+          const c = (frm.inC.value)
+
+          const delta = (b*b)-4*a*c
+
+          resp.textContent = "Delta = " + delta
+        })
+    </script>
+  </body>
+</html>

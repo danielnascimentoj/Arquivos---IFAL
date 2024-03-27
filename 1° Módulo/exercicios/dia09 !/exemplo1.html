@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Mercado</title>
+    <h1>Calculadora Express</h1>
+  </head>
+
+  <body>
+    <form>
+      <p>Quantas centenas:<input type="text" id="inCentenas">
+      <input type="submit" value="Calcular"></p>
+    </form>
+
+    <h2></h2>
+
+    <script>
+      const frm = document.querySelector("form")
+      const resp = document.querySelector("h2")
+
+      frm.addEventListener("submit", (e) =>{
+        e.preventDefault()
+        const ovos = (frm.inCentenas.value)*100
+        const bandeijas = Math.floor(ovos/12)
+        const sobra = ovos%12
+        resp.textContent = "Para " + ovos + " ovos será preciso "+ bandeijas + " bandeijas e sobram "+ sobra + " ovos."
+      })
+    </script>
+  </body>
+
+</html>

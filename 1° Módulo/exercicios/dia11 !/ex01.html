@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Programa Paga idoso</title>
+    <h1>Paga idoso ou não paga</h1>
+  </head>
+  <body>
+    <form>
+      <p>Digite sua idade:<input type="text" id="inIdade"></p>
+      <input type="submit" value="Resultado">
+    </form>
+
+    <h2></h2>
+
+    <script>
+      const frm = document.querySelector("form")
+      const resp = document.querySelector("h2")
+
+      frm.addEventListener("submit", (e) =>{
+        e.preventDefault()
+      
+      const idade = frm.inIdade.value
+
+      if(idade >= 60){
+        resp.textContent = "Gratuito!"
+      }
+      else{
+        resp.textContent = "Pagante!"}
+
+      })
+    </script>
+  </body>
+</html>

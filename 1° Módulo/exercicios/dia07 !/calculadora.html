@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculadora de Quadrados</title>
+    </head>
+    <body>
+        <form>
+            <h1>Calculando o Quadrado</h1>
+            <p>Digite o número:<input type="text" id="inNumero"><input type="submit" value="Calcular"></p>
+        </form>
+
+        <h3></h3>
+
+        <script>
+            let frm = document.querySelector("form")
+            let resp = document.querySelector("h3")
+
+            frm.addEventListener("submit", (e) => {
+                e.preventDefault()
+
+            let numero = frm.inNumero.value
+            let quadrado = numero*numero
+
+            resp.innerText = "O quadrado de " + numero + " é " + quadrado
+//
+            })
+        </script>
+    </body>
+</html>

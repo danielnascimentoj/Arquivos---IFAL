@@ -1,0 +1,22 @@
+<script>
+  //Entrada
+  let salario = Number(prompt("Salario:"))
+  let novo;
+  //Processamento
+  if (salario > 0 && salario <= 400) {
+    novo = salario * 1.15
+  }
+  else if (salario >= 400 && salario <= 700) {
+    novo = salario * 1.10
+  }
+  else if (salario >= 700 && salario <= 1000) {
+    novo = salario * 1.07
+  }
+  else if (salario >= 1000 && salario <= 1600) {
+    novo = salario * 1.03
+  }
+  else {
+    document.write("Sem aumento")
+  }
+  document.write("Novo salario:" + novo.toFixed(2));
+</script>

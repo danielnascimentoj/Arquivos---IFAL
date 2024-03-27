@@ -1,0 +1,33 @@
+<script>
+    let nu = Number(prompt("Digite um numero inteiro:"))
+    let sPrimos = 0
+    let i
+
+    function Primos(nu) {
+        if (nu <= 1) {
+            return false
+        }
+        if (nu <= 3) {
+            return true
+        }
+        if (nu % 2 === 0 || nu % 3 === 0){
+            return false
+        }
+
+        for (let i = 5; i * i <= nu; i += 6){
+            if (nu % i === 0 || nu % (i + 2) === 0){
+                return false
+            }
+        }
+
+        return true
+    }
+
+    for ( i = 2; i <= nu; i++){
+        if (Primos(i)) {
+            sPrimos += i
+        }
+    }
+
+    document.write("A soma de todos os numeros primos entre 1 e " + nu + " é: " + sPrimos)
+</script>

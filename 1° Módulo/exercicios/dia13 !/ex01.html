@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Escola DNL</title>
+  </head>
+  <body>
+    <h1>Programa Média Escolar</h1>
+    <form>
+      <p>Digite seu nome: <input type="text" id="inNome"></p>
+      <p>Nota da Primeira avaliação: <input type="text" id="inNota1"></p>
+      <p>Nota da Segunda avaliação: <input type="text" id="inNota2"></p>
+      <p><input type="submit" value="Obter Média"></p>
+    </form>
+
+    <h3></h3>
+
+    <script>
+      const frm = document.querySelector("form")
+      const resp = document.querySelector("h3")
+
+        frm.addEventListener("submit", (e) =>{
+          e.preventDefault()
+          const nome = (frm.inNome.value)
+          const nota1 = Number(frm.inNota1.value)
+          const nota2 = Number(frm.inNota2.value)
+
+          const media = (nota1+nota2)/2
+
+          if(media>=7){
+            resp.innerText = "Nome do Aluno:"+nome+"\nPrimeira Nota:"+nota1+"\nSegunda Nota:"+nota2+ "\nMédia:"+media+"\nSituação: Aprovado!"
+          }
+          else if(media<3){
+            resp.innerText = "Nome do Aluno:"+nome+"\nPrimeira Nota:"+nota1+"\nSegunda Nota:"+nota2+ "\nMédia:"+media+"\nSituação: Reprovado!"
+            }
+          else{
+            resp.innerText = "Nome do Aluno:"+nome+"\nPrimeira Nota:"+nota1+"\nSegunda Nota:"+nota2+ "\nMédia:"+media+"\nSituação: Prova Final!"
+            }
+        })
+    </script>
+  </body>
+</html>

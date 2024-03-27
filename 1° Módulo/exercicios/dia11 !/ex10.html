@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Gols</title>
+    <h1>Conversão de Penaltis</h1>
+  </head>
+  <body>
+    <form>
+      <p>Time 1:<input type="text" id="inTime1"></p>
+      <p>Time 2:<input type="text" id="inTime2"></p>
+      <input type="submit" value="Resultado">
+    </form>
+
+    <h2></h2>
+
+    <script>
+      const frm = document.querySelector("form")
+      const resp = document.querySelector("h2")
+
+      frm.addEventListener("submit", (e) =>{
+        e.preventDefault()
+      
+      const time1 = frm.inTime1.value
+      const time2 = frm.inTime2.value
+
+      if(time1>time2){
+        resp.textContent = "Time 1 vai para a final!"
+      }
+      else{
+        resp.textContent = "Time 2 vai para a final"}
+
+      })
+    </script>
+  </body>
+</html>

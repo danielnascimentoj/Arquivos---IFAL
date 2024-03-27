@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="" content="">
+  <title>Situação do Aluno</title>
+</head>
+<body>
+    <h1>
+      Programa Situação do Aluno
+    </h1>
+    <form>
+      <p>Nome do aluno: <input type="text" id="inNome"></p>
+      <p>1° Nota:<input type="text" id="inNota1"> </p>
+      <p>2° Nota:<input type="text" id="inNota2"></p>
+      <input type="submit" value="Exibir Média e Situação">
+    </form>
+    
+    <h3></h3>
+    <h4></h4>
+    <script>
+      let frm = document.querySelector("form")
+      let resp1 = document.querySelector("h3")
+      let resp2 = document.querySelector("h4")
+
+      frm.addEventListener("submit", (e) =>{
+        e.preventDefault()
+
+        let nome = frm.inNome.value
+        let nota1 = Number(frm.inNota1.value)
+        let nota2 = Number(frm.inNota2.value)
+
+        let media = (nota1+nota2) /2
+
+        resp1.innerText = `Media das notas: ${media.toFixed(1)}`
+
+        if (media >= 7){
+          resp2.innerText = `Parabéns ${nome}! Você foi aprovado(a)`
+          resp2.style.color = "blue"
+        }
+        else{
+          resp2.innerText = `Reprovado`
+          resp2.style.color = "red"
+        }
+
+      })
+    </script>
+</body>
+</html>

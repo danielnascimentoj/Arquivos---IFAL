@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Maquina de Café</title>
+  </head>
+  <body>
+    <h1>Máquina</h1>
+    
+    <form>
+      <p>
+        Digite o seu nome:<input type="text" id="inNome">
+      </p>
+
+      <p>
+        Quantidade de notas R$:<input type="text" id="inNotas">
+      </p>
+
+      <input type="submit" value="Obter resultado">
+    </form>
+
+    <h3></h3>
+
+    <script>
+      const frm = document.querySelector("form")
+      const resp = document.querySelector("h3")
+
+      frm.addEventListener("submit", (e) =>{
+        e.preventDefault()
+
+        const nome = frm.inNome.value
+        const notas = frm.inNotas.value
+        const cafe = Math.floor(notas/7)
+        const troco = (notas % 7)
+
+        resp.textContent = "Bom dia " + nome + ", você receberá " + cafe + " café(s) e perderá  um troco de R$" + troco
+      })
+    </script>
+  </body>
+</html>

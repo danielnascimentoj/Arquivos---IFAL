@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Programa do Tri</title>
+</head>
+
+<body>
+  <h1>Lados de um Triângulo</h1>
+  <form>
+    <p>Lado A:<input type="text" id="inLadoA"></p>
+    <p>Lado B:<input type="text" id="inLadoB"></p>
+    <p>Lado C:<input type="text" id="inLadoC"></p>
+    <input type="submit" value="Verificar Lados">
+  </form>
+
+  <h2 id="resp"></h2>
+  <h2 id="tipoDeTri"></h2>
+
+  <script>
+    const frm = document.querySelector("form")
+    const resp = document.querySelector("h2")
+    const tipoDeTri = document.querySelector("#tipoDeTri")
+
+    frm.addEventListener("submit", (e) => {
+      e.preventDefault()
+      const ladoA = Number(frm.inLadoA.value)
+      const ladoB = Number(frm.inLadoB.value)
+      const ladoC = Number(frm.inLadoC.value)
+
+      if(ladoA + ladoB < ladoC || ladoB + ladoC < ladoA || ladoA + ladoC < ladoB){
+        resp.innerText = 'Os lados não podem formar um triângulo.'
+        tipoDeTri.innerText = ''
+      } 
+      else{
+        if(ladoA == ladoB && ladoA == ladoC){
+          resp.innerText = "Os lados podem formar um triângulo."
+          tipoDeTri.innerText = "Triângulo equilátero"
+        }
+
+        else if (ladoA == ladoB && ladoB != ladoC || ladoA != ladoB && ladoB == ladoC || ladoA == ladoC){
+          resp.innerText = 'Os lados podem formar um triângulo.'
+            tipoDeTri.innerText = 'Triângulo Isósceles.'
+        }
+        
+        else if (ladoA == ladoB && ladoA == ladoC){
+          resp.innerText = 'Os lados podem formar um triângulo.'
+            tipoDeTri.innerText = 'Triângulo Escaleno.'
+        }
+        }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Banco DN</title>
+  </head>
+  <body>
+    <h1>Programa Caixa Eletrônico</h1>
+    <form>
+      <h2>Cédulas disponíveis: 200, 50, 20 e 5 reais</h2>
+
+      <p>
+        Valor do saque R$:<input type="text" id="inSaque">
+      </p>
+      <p>
+        <input type="submit" value="Exibir Notas para Saque">
+        <input type="reset" value="Encerrar operação">
+      </p>
+    </form>
+
+    <h3 id="resp01"></h3>
+    <h3 id="resp02"></h3>
+    <h3 id="resp03"></h3>
+    <h3 id="resp04"></h3>
+
+    <script>
+      const frm = document.querySelector("form")
+      const resp1 = document.querySelector("#resp01")
+      const resp2 = document.querySelector("#resp02")
+      const resp3 = document.querySelector("#resp03")
+      const resp4 = document.querySelector("#resp04")
+
+      frm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        resp1.innerText = "";
+        resp2.innerText = "";
+        resp3.innerText = "";
+        resp4.innerText = "";
+
+        const saque = Number(frm.inSaque.value);
+
+        if (saque % 5 !== 0 || saque <= 0) {
+          alert("Valor inválido para saque!");
+          frm.inSaque.focus();
+          frm.inSaque.value = '';
+          return;
+        }
+
+        let resto = saque;
+
+        const notasDuzentos = Math.floor(resto / 200);
+        resto = resto % 200;
+
+        const notasCinquenta = Math.floor(resto / 50);
+        resto = resto % 50;
+
+        const notasVinte = Math.floor(resto / 20);
+        resto = resto % 20;
+
+        const notasCinco = Math.floor(resto / 5);
+
+        if (notasDuzentos > 0) {
+          resp1.innerText = "Notas de R$200: " + notasDuzentos;
+        }
+          if (notasCinquenta > 0) {
+          resp2.innerText = "Notas de R$50,00: " + notasCinquenta;
+        }
+          if (notasVinte > 0) {
+          resp3.innerText = "Notas de R$20,00: " + notasVinte;
+        }
+        if (notasCinco > 0) {
+          resp4.innerText = "Notas de R$5,00: " + notasCinco;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+    <h1>Vídeo Locadora JS</h1>
+  </head>
+  <body>
+    <form>
+    <p>Titulo do Filme: <input type="text" id="inFilme"></p>
+    <p>Duração (min): <input type="text" id="inMinutos"></p>
+    <p><input type="submit" value="Converter em horas e Minutos"></p>
+  </form>
+
+  <h2></h2>
+
+  <script>
+    const frm = document.querySelector("form")
+    const resp = document.querySelector("h2")
+
+      frm.addEventListener("submit", (e) =>{
+        e.preventDefault()
+
+        let filme = (frm.inFilme.value)
+        const minutos = Number(frm.inMinutos.value)
+        let horas = Math.floor(minutos/60)
+        let resto = (minutos%60)
+
+        resp.innerText = "O filme '"+ filme + "' tem "+horas+" hora(s) e "+resto+" minutos"
+
+
+      })
+  </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Programa</title>
+  </head>
+
+  <body>
+    <h1>Olá Você</h1>
+    
+    <form>
+        <p>
+          Nome:<input type="text" id="inNome">
+          <input type="submit" value="Mostrar"></p>
+    </form>
+
+    <h3></h3>
+
+    <script>
+      //Cria referência ao FORM e ao elemento H3 (onde será exibida a resposta)
+      const frm = document.querySelector("form")
+      const resp = document.querySelector("h3")
+
+      //Cria um "ouvinte" de evento, acionado quando o botão submit for clicado
+      frm.addEventListener("submit",(e)=>{
+        e.preventDefault() //evita envio do form
+        const nome = frm.inNome.value //obtém o nome digitando no form
+        resp.innerHTML = "Olá "+ nome //exibe a resposta do programa 
+
+      })
+    </script>
+
+  </body>
+</html>

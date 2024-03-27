@@ -1,0 +1,15 @@
+<script>
+  let salario = prompt("Salario")
+  let novo
+
+  if (salario <= 1000) {
+    novo = salario * 1.15
+  }
+  else if (salario <= 2000) {
+    novo = salario * 1.10
+  }
+  else {
+    novo = salario * 1.05
+  }
+  document.write("Seu novo salario será " + novo)
+</script>

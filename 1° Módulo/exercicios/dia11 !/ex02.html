@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Numero</title>
+    <h1>Descubra se o número é negativo ou positivo</h1>
+  </head>
+  <body>
+    <form>
+      <p>Digite o número:<input type="text" id="inNumero"></p>
+      <input type="submit" value="Obter resultado">
+    </form>
+
+    <h2></h2>
+
+    <script>
+      const frm = document.querySelector("form")
+      const resp = document.querySelector("h2")
+
+      frm.addEventListener("submit",(e) =>{
+        e.preventDefault()
+
+      const num = frm.inNumero.value
+
+      if(num>=0){
+        resp.textContent = "Positivo!"
+      }
+      else{
+        resp.textContent = "Negativo!"
+      
+      }
+      })
+    </script>
+  </body>
+</html>

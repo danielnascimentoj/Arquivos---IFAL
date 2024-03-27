@@ -1,0 +1,27 @@
+<script>
+  let mes = Number(prompt("Mês: "))
+
+  switch(mes){
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+        alert("O mês " + mes + " tem 31 dias.")
+        break;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        alert("O mês " + mes + " tem 30 dias.")
+        break;
+    case 2:
+        alert("O mês " + mes + " tem 28 ou 29 dias.")
+        break;
+    default:
+        alert("O mês informado não existe!")
+  
+  }
+</script>

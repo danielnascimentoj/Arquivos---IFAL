@@ -1,0 +1,15 @@
+<script>
+  //incompleta
+  let jogadores = Number(prompt("Números de jogadores: "))
+  let somaAlt = 0
+  let alt
+  let i
+  let media
+
+  for(i = 1;i <= jogadores;i++){
+    alt = Number(prompt("Altura " + i + " (em metros)"))
+    somaAlt += alt
+  }
+   media = somaAlt / jogadores
+  document.write("Media: " + media.toFixed(2) + " metros")
+</script>

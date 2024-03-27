@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 2</title>
+</head>
+<body>
+    <h1>Delta da Equação de 2° grau</h1>
+
+    <h2>&Delta; = b² - 4 . a . c</h2>
+
+    <form>  
+        <p>Valor de A: <input type="text" id="inA"></p> <!-- Criação do campo de texto para o valor de A -->
+        <p>Valor de B: <input type="text" id="inB"></p> <!-- Criação do campo de texto para o valor de B -->
+        <p>Valor de C: <input type="text" id="inC"></p> <!-- Criação do campo de texto para o valor de C -->
+
+        <input type="submit" value="Calcular o &Delta;"> <!-- Criação do botão para gerar o resultado -->
+    </form>
+
+    <h3></h3> <!-- Abertura das tags h3 - elas irão receber a resposta -->
+
+    <script>
+        const frm = document.querySelector("form") //Código Padrão
+        const resp = document.querySelector("h3") //Código Padrão
+
+        frm.addEventListener("submit", (e) =>{
+            e.preventDefault()
+
+            let a = Number(frm.inA.value)
+            let b = Number(frm.inB.value)
+            let c = Number(frm.inC.value)
+
+            let delta = ((b * b)-4 * a * c) // Definição do valor de delta: Delta = b² - 4 * a * c
+
+            resp.innerText = "Delta:  " + delta //Mostra o valor de Delta
+        })
+
+
+    </script>
+</body>
+</html>

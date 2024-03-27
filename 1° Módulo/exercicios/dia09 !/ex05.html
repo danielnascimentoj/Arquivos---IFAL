@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Campeonato Brasileiro</title>
+    <h1>Calculadora de Pontos Corridos</h1>
+  </head>
+  <body>
+    <form>
+      <p>Nome do Time:<input type="text" id="inTime"></p>
+      <p>Quantidade de Vitórias:<input type="text" id="inVitorias"></p>
+      <p>Quantidade de Empates:<input type="text" id="inEmpates"></p>
+      <input type="submit" value="Calcular Pontuação">
+    </form>
+
+    <h3></h3>
+
+    <script>
+      const frm = document.querySelector("form")
+      const resp = document.querySelector("h3")
+
+      frm.addEventListener("submit", (e) =>{
+        e.preventDefault()
+
+        const time = frm.inTime.value
+        const pontos = Number(frm.inVitorias.value*3)
+        const empates = Number(frm.inEmpates.value) 
+        const resul = pontos+empates
+
+        resp.textContent = "Pontuação do time " + time + ": " + resul + " pontos"
+      })
+    </script>
+  </body>
+</html>

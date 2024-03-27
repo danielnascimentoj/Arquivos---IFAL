@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Balança</title>
+</head>
+
+<body>
+  <h1>Calculo do IMC</h1>
+  <form>
+
+    <p>
+      Sexo:
+      <input type="radio" name="sexo" id="inSexo" required> Masculino
+      <input type="radio" name="sexo" required> Feminino
+    </p>
+
+    <p>
+      Peso: <input type="text" id="inPeso">
+    </p>
+
+    <p>
+      Altura:<input type="text" id="inAltura">
+    </p>
+
+    <p>
+      <input type="submit" value="Calcular peso">
+    </p>
+
+  </form>
+
+  <h2></h2>
+
+  <script>
+    const frm = document.querySelector("form")
+    const resp = document.querySelector("h2")
+
+    frm.addEventListener("submit", (e) => {
+      e.preventDefault()
+
+      const sexo = (frm.inSexo.value)
+      const peso = Number(frm.inPeso.value)
+      const altura = Number(frm.inAltura.value)
+      const masculino = frm.inSexo.value
+      const feminino = frm.inSexo.value
+
+      let imc = peso/(altura*altura)
+
+      if (sexo == masculino){
+        if (imc < 20.7){
+          resp.innerText = 'Abaixo do peso.'
+        }
+        else if (imc >= 20.7 && imc < 26.4) {
+          resp.innerText = 'No peso normal.'
+        }
+        else if (imc > 26.4 && imc < 27.8) {
+          resp.innerText = 'Levemente acima do peso.'
+        }
+        else if (imc > 27.8 && imc < 31.1) {
+          resp.innerText = 'Acima do peso ideal.'
+        }
+        else {
+          resp.innerText = 'Obeso.'
+        }
+      }
+      else {
+
+        if (sexo == feminino) {
+          if (imc < 19.1) {
+            resp.innerText = 'Abaixo do peso.'
+          }
+          else if (imc >= 19.1 && imc < 25.8) {
+            resp.innerText = 'No peso normal.'
+          }
+          else if (imc > 25.8 && imc < 27.3) {
+            resp.innerText = 'Levemente acima do peso.'
+          }
+          else if (imc > 27.3 && imc < 32.3) {
+            resp.innerText = 'Acima do peso ideal'
+          }
+          else {
+            resp.innerText = 'Obeso.'
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

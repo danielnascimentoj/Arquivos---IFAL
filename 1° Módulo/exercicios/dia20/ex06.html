@@ -1,0 +1,15 @@
+<script>
+  let i = 0;
+
+  while(true) {
+    let num = Number(prompt("Digite um número (para sair, digite um número negativo): "));
+    
+    if (num < 0) {
+      break; // Para quando o número for negativo
+    }
+    
+    i++; // contador de números positivos
+  }
+
+  document.write("Foram digitados " + i + " números positivos.");
+</script>

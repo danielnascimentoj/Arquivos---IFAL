@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ConTime</title>
+    <h1>Corrida de Rua</h1>
+  </head>
+  <body>
+    <form>
+      <p>Tempo em segundos:<input type="text" id="inSegundos">
+        <input type="submit" value="Converter"></p>
+    </form>
+
+    <h2></h2>
+
+    <script>
+      // Seleciona o elemento <form> dentro do documento HTML e atribui à variável 'frm'
+      const frm = document.querySelector("form");
+
+      // Seleciona o elemento <h2> dentro do documento HTML e atribui à variável 'resp'
+      const resp = document.querySelector("h2");
+
+      // Adiciona um ouvinte de eventos para o evento 'submit' no formulário ('frm')
+      frm.addEventListener("submit", (e) => {
+        // Previne o comportamento padrão do formulário (recarregar a página)
+        e.preventDefault();
+
+        // Obtém o valor inserido no campo de entrada com o ID 'inSegundos' e atribui à variável 'segundos'
+        const segundos = frm.inSegundos.value;
+
+        // Calcula os minutos a partir dos segundos inseridos, arredondando para baixo
+        const minutos = Math.floor(segundos / 60);
+
+        // Calcula o resto dos segundos que não podem ser convertidos em minutos
+        const resto = segundos % 60;
+
+        // Define o texto do elemento <h2> para mostrar o tempo convertido
+        resp.textContent = "Seu tempo foi de " + minutos + " minuto(s) e " + resto + " segundo(s)";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<script>
+  let n = prompt("Número: ");
+  let i = 0;
+  let menor = 99999
+
+  while (n > 0) {
+    document.write("");
+    i++;
+    if (n < menor) {
+      menor = n; // Atualize menor se n for menor que o valor atual de menor
+    }
+    n = prompt("Número: "); // Solicite o próximo número
+  }
+
+  document.write("Menor numero inserido: " + menor);
+</script>

@@ -1,0 +1,21 @@
+<script>
+  let num
+  let soma
+  let i
+
+  if(num < 14){
+    alert("O numero deve ser maior que 14")
+  }
+  else{
+  soma = 0
+}
+
+  num = Number(prompt("Digite um número maior que 14: "));
+
+  for(let i = 12; i <= num; i++) {
+    if(i % 7 === 0) {
+      soma +=  i
+    }
+  }
+  document.write("A soma dos multiplos de 7 entre 12 e " + num + " é: " + soma);
+</script>

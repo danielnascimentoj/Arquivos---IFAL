@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Restaurante por quilo</title>
+    <h1>Restaurante LBMS</h1>
+  </head>
+  <body>
+    <form>
+      <p>Buffet por Quilo:<input type="text" id="inQuilo"></p>
+      <p>Consumo do cliente (gr):<input type="text" id="inCliente"></p>
+      <input type="submit" value="Calcular Preço">
+    </form>
+
+    <h3></h3>
+
+    <script>
+      const frm = document.querySelector("form");
+      const resp = document.querySelector("h3");
+
+      frm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const quilo = Number(frm.inQuilo.value);
+        const cliente = Number(frm.inCliente.value);
+        const precoQuilo = 10;
+
+  
+        const preco = (quilo *  (cliente / 1000) * precoQuilo)
+
+        resp.textContent = "Valor a pagar R$:" + preco.toFixed(2);
+      });
+    </script>
+  </body>
+</html>

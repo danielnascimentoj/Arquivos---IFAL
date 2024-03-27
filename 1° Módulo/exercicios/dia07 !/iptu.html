@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>IPTU 2023</title>
+    </head>
+    <body>
+        <form>
+            <h1>IPTU - PREFEITURA DE RIO LARGO</h1>
+            <p>Digite o valor do seu IPTU:<input type="text" id="inValor">
+            <input type="submit" value="Calcular Opções"></p>
+        </form>
+
+        <h3></h3>
+
+        <script>
+            const frm = document.querySelector("form")
+            const resp = document.querySelector("h3")
+
+            frm.addEventListener("submit", (e)=>{
+                e.preventDefault()
+
+            const iptu =  Number(frm.inValor.value)
+            const valorDesc = iptu*0.20
+            const desc = valorDesc
+            const avista = iptu-desc
+            const parc = iptu /8
+
+            resp.innerText = "O valor com desconto de 20% é " + avista.toFixed(2) + " e parcelado fica 8x de " + parc.toFixed(2) 
+            })
+        </script>
+    </body>
+</html>

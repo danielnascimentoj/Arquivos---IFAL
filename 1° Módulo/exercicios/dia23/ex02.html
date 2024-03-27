@@ -1,0 +1,14 @@
+<script>
+  let soma = 0
+  let i = 0
+
+  while(i<5){
+    let valorAlea = Math.random()
+    soma = valorAlea
+    document.write(Math.floor(i + valorAlea) + "<br>")
+    i++
+  }
+  
+  document.write("Somatório: " + (soma * 10).toFixed(1) + "<br>")
+  document.write("Média: " + ((soma/5) * 10).toFixed(1) + "<br>")
+</script>

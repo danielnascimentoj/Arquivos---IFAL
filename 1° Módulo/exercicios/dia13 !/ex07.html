@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Aumento salarial</title>
+  </head>
+  <body>
+    <h1>Cálcule seu aumento salarial</h1>
+    <form>
+      <p>Informe seu salário atual:<input type="text" id="inAtual"></p>
+      <p>Qual a sua situação na empresa:<br>
+      <input type="radio" name="situacao" id="inEstagiario" required>Sou estagiário (5%) <br>
+      <input type="radio" name="situacao" id="inTemporario" required>Tenho contrato temporário(8%)<br>
+      <input type="radio" name="situacao" id="inEfetivo" required>Sou Efetivo (15%)<br>
+      </p>
+
+      <p>
+        <input type="submit" value="Calcular Novo Salário"><input type="reset" value="Limpar Campos" id="inLimpar">
+      </p>
+
+    </form>
+
+    <h3></h3>
+
+    <script>
+      const frm = document.querySelector("form")
+      const resp = document.querySelector("h3")
+
+        frm.addEventListener("submit", (e) =>{
+          e.preventDefault()
+          frm.addEventListener("reset", () =>{
+          resp.innerText = ""
+          })
+
+          const atual = (frm.inAtual.value) 
+          const estagiario = (frm.inEstagiario.checked)
+          const temporario = (frm.inTemporario.checked)
+          const efetivo = (frm.inEfetivo.checked)
+
+          let novoSalario
+
+          if(estagiario==true){
+            novoSalario = atual*1.05
+            resp.innerText = "Seu novo salário será R$:" + novoSalario.toFixed(2)
+            }
+          else if(temporario==true){
+            novoSalario = atual*1.08
+            resp.innerText = "Seu novo salário será R$:" + novoSalario.toFixed(2)
+          }
+          else{
+            novoSalario = atual*1.15
+            resp.innerText = "Seu novo salário será R$:" + novoSalario.toFixed(2)
+          }
+        })
+    </script>
+  </body>
+</html>
